@@ -84,25 +84,23 @@ export default function JoinMeeting() {
     };
     getMeetingData();
   }, [params.id, user, userLoaded, createToast, navigate]);
+
+  const appId = 1021789490;
+  const serverSecret = "3b5b37ba070d02c434c3c6d96e2732e5";
+
   const myMeeting = async (element: any) => {
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
-      parseInt(process.env.REACT_APP_ZEGOCLOUD_APP_ID!),
-      process.env.REACT_APP_ZEGOCLOUD_SERVER_SECRET as string,
+      appId,
+      serverSecret,
       params.id as string,
       user?.uid ? user.uid : generateMeetingID(),
       user?.displayName ? user.displayName : generateMeetingID()
     );
     const zp = ZegoUIKitPrebuilt.create(kitToken);
-
-    zp?.joinRoom({
+    zp.joinRoom({
       container: element,
       maxUsers: 50,
-      sharedLinks: [
-        {
-          name: "Personal link",
-          url: window.location.origin,
-        },
-      ],
+      sharedLinks: [{ name: "Personal Link", url: window.location.origin }],
       scenario: {
         mode: ZegoUIKitPrebuilt.VideoConference,
       },

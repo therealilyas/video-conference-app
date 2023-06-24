@@ -2,13 +2,13 @@ import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { collection, getFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: "react-auth-6788d.firebaseapp.com",
-  projectId: "react-auth-6788d",
-  storageBucket: "react-auth-6788d.appspot.com",
-  messagingSenderId: "131797845021",
-  appId: "1:131797845021:web:3f7ff4766e2b89ca5d32f4",
-  measurementId: "G-VWPBR1NSLL",
+  apiKey: "AIzaSyAzZglkB_434L102O_8azXZtqLBit8ZFc4",
+  authDomain: "video-conference-67e6c.firebaseapp.com",
+  projectId: "video-conference-67e6c",
+  storageBucket: "video-conference-67e6c.appspot.com",
+  messagingSenderId: "1056312621801",
+  appId: "1:1056312621801:web:fe943ea78e5965d24b4e78",
+  measurementId: "G-41XHBEY1JH",
 };
 
 const app = initializeApp(firebaseConfig);
